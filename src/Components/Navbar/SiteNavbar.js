@@ -11,11 +11,12 @@ const SiteNavbar = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <CustomLink to="/home">Features</CustomLink>
-                            <CustomLink to="/about">Pricing</CustomLink>
+                            <CustomLink to="/services">Services</CustomLink>
+                            <CustomLink to="/blog">Blog</CustomLink>
+                            <CustomLink to="/about">About</CustomLink>
                         </Nav>
                         <Nav>
-                            <CustomLink to="/login">More deets</CustomLink>
+                            <CustomLink to="/login">Log In</CustomLink>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

@@ -1,0 +1,31 @@
+[
+    {
+        "id": 1,
+
+        "price": "$300",
+        "name": "Business fair",
+        "about": "For most businesses event like book fair, craft fair.",
+        "rate": "5"
+    },
+    {
+        "id": 2,
+        "price": "$500",
+        "name": "Wedding basic",
+        "about": "For weddings with basic plan and limited item",
+        "rate": "4.9"
+    },
+    {
+        "id": 3,
+        "price": "$800",
+        "name": "Wedding plus",
+        "about": "For most weddings with premium plans ",
+        "rate": "5"
+    },
+    {
+        "id": 4,
+        "price": "$1200",
+        "name": "Corporate event",
+        "about": "For most corporate business events",
+        "rate": "4"
+    }
+]
