@@ -1,6 +1,6 @@
 const Checkout = (props) => {
     return (
-        <div>
+        <div style={{ height: "71vh" }}>
             <h3>{props.name}</h3>
             <h1>Checkout Service</h1>
         </div>

@@ -18,7 +18,7 @@ const Login = () => {
     if (error || emailError) {
         errorElement = (
             <div>
-                <p>Error: {error.message}</p>
+                <p>Error: {error?.message}</p>
             </div>
         );
     }
@@ -32,7 +32,7 @@ const Login = () => {
     return (
         <div>
             <div
-                style={{ height: "75vh" }}
+                style={{ height: "72vh" }}
                 className="container d-flex align-items-center"
             >
                 <div className="w-50 mx-auto pt-5">

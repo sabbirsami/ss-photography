@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 
@@ -38,7 +38,7 @@ const SingIn = () => {
     return (
         <div>
             <div
-                style={{ height: "75vh" }}
+                style={{ height: "72vh" }}
                 className="container d-flex align-items-center"
             >
                 <div className="w-50 mx-auto pt-5">
@@ -86,7 +86,13 @@ const SingIn = () => {
                             >
                                 Sign in
                             </button>
-                            <div className="d-flex align-items-center pt-3">
+                            <div className="p-3">
+                                <p>
+                                    Already have an account?{" "}
+                                    <Link to="/login">Log In</Link>
+                                </p>
+                            </div>
+                            <div className="d-flex align-items-center">
                                 <div className="single_border"></div>
                                 <h5>OR</h5>
                                 <div className="single_border"></div>
