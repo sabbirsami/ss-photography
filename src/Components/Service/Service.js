@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../Services/Services.css";
 
-const Service = ({ service }) => {
+const Service = ({ service, addToCart }) => {
     const { price, name, about, services, img } = service;
     return (
         <div className="col-lg-3 p-2">
@@ -17,13 +18,16 @@ const Service = ({ service }) => {
                         <p className="card-text">{about}</p>
                         <ul>
                             {services.map((ourServices) => (
-                                <li>{ourServices}</li>
+                                <li key={ourServices.id}>{ourServices}</li>
                             ))}
                         </ul>
                     </div>
-                    <button className="btn btn-primary p-2 bg-gradient rounded">
+                    <Link
+                        to={`/checkout/${service.id}`}
+                        className="btn btn-primary p-2 bg-gradient rounded"
+                    >
                         Checkout
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Checkout from "../Checkout/Checkout";
 import Service from "../Service/Service";
 
 const Services = () => {

@@ -1,6 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
+import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
+import auth from "../../firebase.init";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 const SingIn = () => {
+    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [
+        createUserWithEmailAndPassword,
+        userEmail,
+        loadingEmail,
+        emailError,
+    ] = useCreateUserWithEmailAndPassword(auth);
+
+    const navigate = useNavigate();
+    let errorElement;
+    if (error || emailError) {
+        errorElement = (
+            <div>
+                <p>
+                    Error: {error?.message} {emailError?.message}
+                </p>
+            </div>
+        );
+    }
+    if (user || userEmail) {
+        navigate("/");
+    }
+    const handleSingUp = (e) => {
+        e.preventDefault();
+        createUserWithEmailAndPassword(email, password);
+    };
     return (
         <div>
             <div
@@ -9,7 +41,7 @@ const SingIn = () => {
             >
                 <div className="w-50 mx-auto pt-5">
                     <main className="form-signin">
-                        <form>
+                        <form onSubmit={handleSingUp}>
                             <h1 className="h3 mb-3 fw-normal">Sing in</h1>
 
                             <div className="form-floating pb-2">
@@ -27,6 +59,7 @@ const SingIn = () => {
                                     className="form-control"
                                     id="floatingInput"
                                     placeholder="name@example.com"
+                                    onBlur={(e) => setEmail(e.target.value)}
                                     required
                                 />
                                 <label for="floatingInput">Email address</label>
@@ -37,10 +70,14 @@ const SingIn = () => {
                                     className="form-control"
                                     id="floatingPassword"
                                     placeholder="Password"
+                                    onBlur={(e) => setPassword(e.target.value)}
                                     required
                                 />
                                 <label for="floatingPassword">Password</label>
                             </div>
+                            <small className="text-danger text-start">
+                                {errorElement}
+                            </small>
                             <button
                                 className="w-100 btn btn-lg btn-primary py-2"
                                 type="submit"
@@ -52,7 +89,10 @@ const SingIn = () => {
                                 <h5>OR</h5>
                                 <div className="single_border"></div>
                             </div>
-                            <button className="btn btn-light w-100 border border-2 border-primary mb-2">
+                            <button
+                                onClick={() => signInWithGoogle()}
+                                className="btn btn-light w-100 border border-2 border-primary mb-2"
+                            >
                                 Sing In With Google
                             </button>
                         </form>

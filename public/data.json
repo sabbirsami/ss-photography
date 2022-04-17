@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "id": "1",
 
         "price": "$300",
         "name": "BASIC",
@@ -13,7 +13,7 @@
         "img": "https://i.ibb.co/9tLxrzf/services-bannar1.jpg"
     },
     {
-        "id": 2,
+        "id": "2",
         "price": "$500",
         "name": "STANDARD",
         "about": "For weddings with basic plan and limited item",
@@ -27,7 +27,7 @@
         "img": "https://i.ibb.co/GCMCPkV/services-bannar2.jpg"
     },
     {
-        "id": 3,
+        "id": "3",
         "price": "$800",
         "name": "PROFESSIONAL",
         "about": "For most weddings with premium plans ",
@@ -41,7 +41,7 @@
         "img": "https://i.ibb.co/4pwhcbL/services-bannar3.jpg"
     },
     {
-        "id": 4,
+        "id": "4",
         "price": "$1200",
         "name": "ECOMMERCE",
         "about": "For most corporate business events",

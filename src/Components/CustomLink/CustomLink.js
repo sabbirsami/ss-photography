@@ -11,8 +11,8 @@ const CustomLink = ({ children, to, ...props }) => {
                     fontSize: "17px",
                     padding: "10px",
                     textDecoration: "none",
-                    color: match ? "#FFC014" : "white",
-                    borderBottom: match ? "2px solid #FFC014" : "none",
+                    color: match ? "#F87471" : "white",
+                    borderBottom: match ? "3px solid #F87471" : "none",
                 }}
                 to={to}
                 {...props}
