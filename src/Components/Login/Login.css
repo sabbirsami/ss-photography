@@ -26,3 +26,10 @@
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+
+.single_border {
+    height: 1px;
+    border: 1px solid lightgray;
+    width: 100%;
+    margin: 10px;
+}

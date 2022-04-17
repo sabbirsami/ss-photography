@@ -8,33 +8,33 @@ const SingIn = () => {
                 className="container d-flex align-items-center"
             >
                 <div className="w-50 mx-auto pt-5">
-                    <main class="form-signin">
+                    <main className="form-signin">
                         <form>
-                            <h1 class="h3 mb-3 fw-normal">Sing in</h1>
+                            <h1 className="h3 mb-3 fw-normal">Sing in</h1>
 
-                            <div class="form-floating pb-2">
+                            <div className="form-floating pb-2">
                                 <input
                                     type="text"
-                                    class="form-control"
+                                    className="form-control"
                                     id="floatingInput"
                                     placeholder="name@example.com"
                                 />
                                 <label for="floatingInput">Your Name</label>
                             </div>
-                            <div class="form-floating">
+                            <div className="form-floating">
                                 <input
                                     type="email"
-                                    class="form-control"
+                                    className="form-control"
                                     id="floatingInput"
                                     placeholder="name@example.com"
                                     required
                                 />
                                 <label for="floatingInput">Email address</label>
                             </div>
-                            <div class="form-floating">
+                            <div className="form-floating">
                                 <input
                                     type="password"
-                                    class="form-control"
+                                    className="form-control"
                                     id="floatingPassword"
                                     placeholder="Password"
                                     required
@@ -42,10 +42,18 @@ const SingIn = () => {
                                 <label for="floatingPassword">Password</label>
                             </div>
                             <button
-                                class="w-100 btn btn-lg btn-primary py-2"
+                                className="w-100 btn btn-lg btn-primary py-2"
                                 type="submit"
                             >
                                 Sign in
+                            </button>
+                            <div className="d-flex align-items-center pt-3">
+                                <div className="single_border"></div>
+                                <h5>OR</h5>
+                                <div className="single_border"></div>
+                            </div>
+                            <button className="btn btn-light w-100 border border-2 border-primary mb-2">
+                                Sing In With Google
                             </button>
                         </form>
                     </main>
