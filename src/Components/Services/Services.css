@@ -1,0 +1,10 @@
+.card_section {
+    padding: 15px;
+    background-color: #bce2e6;
+    border-radius: 10px;
+    box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+}
+.card_style {
+    border: 0 !important;
+    border-radius: 10px;
+}

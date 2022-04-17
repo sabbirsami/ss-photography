@@ -1,4 +1,5 @@
 import React from "react";
+import "../Services/Services.css";
 
 const Service = ({ service }) => {
     const { price, name, about, services, img } = service;
@@ -10,15 +11,17 @@ const Service = ({ service }) => {
                     style={{ backgroundColor: "#F6F6F6" }}
                 >
                     <div className="card-body text-start">
-                        <img className="w-100" src={img} alt="" />
-                        <h1>{price}</h1>
-                        <h5 className="card-title">{name}</h5>
+                        <img className="w-100 rounded-3" src={img} alt="" />
+                        <h1 className="py-2 fw-bold">{price}</h1>
+                        <h4 className="card-title fw-bold">{name}</h4>
                         <p className="card-text">{about}</p>
-                        {services.map((ourServices) => (
-                            <li>{ourServices}</li>
-                        ))}
+                        <ul>
+                            {services.map((ourServices) => (
+                                <li>{ourServices}</li>
+                            ))}
+                        </ul>
                     </div>
-                    <button className="btn btn-primary">Buy</button>
+                    <button className="btn btn-primary rounded">Buy</button>
                 </div>
             </div>
         </div>
