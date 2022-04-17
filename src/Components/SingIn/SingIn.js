@@ -53,7 +53,7 @@ const SingIn = () => {
                                     id="floatingInput"
                                     placeholder="user"
                                 />
-                                <label for="floatingInput">Your Name</label>
+                                <label htmlFor="floatingInput">Your Name</label>
                             </div>
                             <div className="form-floating">
                                 <input
@@ -64,7 +64,9 @@ const SingIn = () => {
                                     onBlur={(e) => setEmail(e.target.value)}
                                     required
                                 />
-                                <label for="floatingInput">Email address</label>
+                                <label htmlFor="floatingInput">
+                                    Email address
+                                </label>
                             </div>
                             <div className="form-floating">
                                 <input
@@ -75,7 +77,9 @@ const SingIn = () => {
                                     onBlur={(e) => setPassword(e.target.value)}
                                     required
                                 />
-                                <label for="floatingPassword">Password</label>
+                                <label htmlFor="floatingPassword">
+                                    Password
+                                </label>
                             </div>
                             <small className="text-danger text-start">
                                 {errorElement}

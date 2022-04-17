@@ -51,7 +51,9 @@ const Login = () => {
                                     onBlur={(e) => setEmail(e.target.value)}
                                     required
                                 />
-                                <label for="floatingInput">Email address</label>
+                                <label htmlFor="floatingInput">
+                                    Email address
+                                </label>
                             </div>
                             <div className="form-floating">
                                 <input
@@ -62,7 +64,9 @@ const Login = () => {
                                     onBlur={(e) => setPassword(e.target.value)}
                                     required
                                 />
-                                <label for="floatingPassword">Password</label>
+                                <label htmlFor="floatingPassword">
+                                    Password
+                                </label>
                             </div>
                             <small className="text-danger text-start">
                                 {errorElement}

@@ -13,10 +13,10 @@ const Hero = () => {
                                 Get Best Wedding Picture
                             </h1>
                             <p className="text-start w-75">
-                                Lorem ipsum, dolor sit amet consectetur
-                                adipisicing elit. Dolorum fugiat quaerat eaque
-                                exercitationem. Quo asperiores iure facere totam
-                                libero harum?
+                                Are you looking for a photographer? Here you get
+                                world best photographer. You can choose our
+                                services from our website dependent on your need
+                                with different prices.
                             </p>
                         </div>
                     </div>

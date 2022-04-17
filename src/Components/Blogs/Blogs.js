@@ -3,7 +3,7 @@ import { Accordion, Container } from "react-bootstrap";
 
 const Blogs = () => {
     return (
-        <div>
+        <div style={{ height: "72vh" }}>
             <Container className="py-5">
                 <h1 className="p-3">Question Answerer</h1>
                 <Accordion>
