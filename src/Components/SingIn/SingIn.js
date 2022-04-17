@@ -1,8 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "./Login.css";
 
-const Login = () => {
+const SingIn = () => {
     return (
         <div>
             <div
@@ -12,8 +10,17 @@ const Login = () => {
                 <div className="w-50 mx-auto pt-5">
                     <main class="form-signin">
                         <form>
-                            <h1 class="h3 mb-3 fw-normal p-2">Please Login</h1>
+                            <h1 class="h3 mb-3 fw-normal">Sing in</h1>
 
+                            <div class="form-floating pb-2">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="floatingInput"
+                                    placeholder="name@example.com"
+                                />
+                                <label for="floatingInput">Your Name</label>
+                            </div>
                             <div class="form-floating">
                                 <input
                                     type="email"
@@ -41,9 +48,6 @@ const Login = () => {
                                 Sign in
                             </button>
                         </form>
-                        <div className="p-3">
-                            <Link to="/signin">Create an account</Link>
-                        </div>
                     </main>
                 </div>
             </div>
@@ -51,4 +55,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default SingIn;
