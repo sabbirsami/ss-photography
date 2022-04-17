@@ -18,7 +18,7 @@ const Service = ({ service, addToCart }) => {
                         <p className="card-text">{about}</p>
                         <ul>
                             {services.map((ourServices) => (
-                                <li key={ourServices.id}>{ourServices}</li>
+                                <li>{ourServices}</li>
                             ))}
                         </ul>
                     </div>

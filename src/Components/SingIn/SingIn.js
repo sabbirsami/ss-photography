@@ -6,14 +6,16 @@ import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 const SingIn = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
     const [
         createUserWithEmailAndPassword,
         userEmail,
         loadingEmail,
         emailError,
     ] = useCreateUserWithEmailAndPassword(auth);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    console.log(email);
+    console.log(password);
 
     const navigate = useNavigate();
     let errorElement;
@@ -42,7 +44,7 @@ const SingIn = () => {
                 <div className="w-50 mx-auto pt-5">
                     <main className="form-signin">
                         <form onSubmit={handleSingUp}>
-                            <h1 className="h3 mb-3 fw-normal">Sing in</h1>
+                            <h1 className="h3 mb-3 fw-normal">Sing Up</h1>
 
                             <div className="form-floating pb-2">
                                 <input

@@ -9,27 +9,37 @@ const Blogs = () => {
                 <Accordion>
                     <Accordion.Item eventKey="0">
                         <Accordion.Header>
-                            What are semantic tags?
+                            Difference between authorization and authentication?
                         </Accordion.Header>
                         <Accordion.Body className="text-start">
-                            Semantic tags are HTML5 elements. We can easily
-                            understand what section or what this tag going to do
-                            by seeing this tag. it give some clue about what
-                            happens when the link is selected So Semantic tags
-                            are those which have their own definition and usage
-                            according to their name. like header, footer, nav,
-                            blockquote etc.
+                            Authentication process use for checking identity of
+                            users to provide the access to the system. One the
+                            other hand Authorization process for checking user
+                            for accessing the resources. Authentication process
+                            check users or persons are verified or not. One the
+                            other hand Authorization process check user
+                            validated or not.
                         </Accordion.Body>
                     </Accordion.Item>
                     <Accordion.Item eventKey="1">
                         <Accordion.Header>
-                            What is Context API?
+                            Why are you using firebase? What other options do
+                            you have to implement authentication?
                         </Accordion.Header>
                         <Accordion.Body className="text-start">
-                            Context API is a React structure which is help you
-                            to solving major React problem props drilling. If
-                            you use context api you will able to pass data
-                            easily you dont event need to pass any props.
+                            I am using firebase for authentication user and
+                            hoisting website. some other options i have to
+                            implement authentication are okka, oOneLogin,
+                            JumpCloud, Auth0, FrogeRock etc.
+                        </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item eventKey="2">
+                        <Accordion.Header>
+                            What other services does firebase provide other than
+                            authentication?
+                        </Accordion.Header>
+                        <Accordion.Body className="text-start">
+                            Firebase provide other than authentication
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>
