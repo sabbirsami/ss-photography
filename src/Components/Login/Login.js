@@ -1,23 +1,34 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import "./Login.css";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 
 const Login = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [signInWithEmailAndPassword, userEmail, loadingEmail, emailError] =
+        useSignInWithEmailAndPassword(auth);
     const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     let errorElement;
-    if (error) {
+    if (error || emailError) {
         errorElement = (
             <div>
                 <p>Error: {error.message}</p>
             </div>
         );
     }
-    if (user) {
-        navigate("/");
+    if (user || userEmail) {
+        navigate(from, { replace: true });
     }
+    const handleLogIn = (e) => {
+        e.preventDefault();
+        signInWithEmailAndPassword(email, password);
+    };
     return (
         <div>
             <div
@@ -26,7 +37,7 @@ const Login = () => {
             >
                 <div className="w-50 mx-auto pt-5">
                     <main className="form-signin">
-                        <form>
+                        <form onSubmit={handleLogIn}>
                             <h1 className="h3 mb-3 fw-normal p-2">
                                 Please Login
                             </h1>
@@ -37,6 +48,7 @@ const Login = () => {
                                     className="form-control"
                                     id="floatingInput"
                                     placeholder="name@example.com"
+                                    onBlur={(e) => setEmail(e.target.value)}
                                     required
                                 />
                                 <label for="floatingInput">Email address</label>
@@ -47,6 +59,7 @@ const Login = () => {
                                     className="form-control"
                                     id="floatingPassword"
                                     placeholder="Password"
+                                    onBlur={(e) => setPassword(e.target.value)}
                                     required
                                 />
                                 <label for="floatingPassword">Password</label>

@@ -51,7 +51,7 @@ const SingIn = () => {
                                     type="text"
                                     className="form-control"
                                     id="floatingInput"
-                                    placeholder="name@example.com"
+                                    placeholder="user"
                                 />
                                 <label for="floatingInput">Your Name</label>
                             </div>

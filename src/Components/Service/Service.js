@@ -23,8 +23,8 @@ const Service = ({ service, addToCart }) => {
                         </ul>
                     </div>
                     <Link
-                        to={`/checkout/${service.id}`}
-                        className="btn btn-primary p-2 bg-gradient rounded"
+                        to={`/checkout/`}
+                        className="btn btn-primary p-2 bg-gradient rounded-bottom"
                     >
                         Checkout
                     </Link>
