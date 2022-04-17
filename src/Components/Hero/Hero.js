@@ -1,4 +1,5 @@
 import React from "react";
+import GoToAbout from "../GoToAbout/GoToAbout";
 import Services from "../Services/Services";
 import "./Hero.css";
 
@@ -34,6 +35,7 @@ const Hero = () => {
                 </div>
             </div>
             <Services></Services>
+            <GoToAbout></GoToAbout>
         </div>
     );
 };

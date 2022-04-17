@@ -6,7 +6,7 @@ const Service = ({ service, addToCart }) => {
     const { price, name, about, services, img } = service;
     return (
         <div className="col-lg-3 p-2">
-            <div className="card_section">
+            <div className="card_section cart_bg">
                 <div
                     className="card_style card"
                     style={{ backgroundColor: "#F6F6F6" }}
