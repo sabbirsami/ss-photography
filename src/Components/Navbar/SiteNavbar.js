@@ -13,6 +13,7 @@ const SiteNavbar = () => {
                         <Nav className="me-auto">
                             <CustomLink to="/">Home</CustomLink>
                             <CustomLink to="/services">Services</CustomLink>
+                            <CustomLink to="/checkout">Checkout</CustomLink>
                             <CustomLink to="/blog">Blog</CustomLink>
                             <CustomLink to="/about">About</CustomLink>
                         </Nav>

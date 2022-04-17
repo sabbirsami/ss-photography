@@ -21,7 +21,9 @@ const Service = ({ service }) => {
                             ))}
                         </ul>
                     </div>
-                    <button className="btn btn-primary rounded">Buy</button>
+                    <button className="btn btn-primary p-2 bg-gradient rounded">
+                        Checkout
+                    </button>
                 </div>
             </div>
         </div>
