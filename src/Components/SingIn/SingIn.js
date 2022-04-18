@@ -8,11 +8,6 @@ import { toast } from "react-toastify";
 import { Button } from "react-bootstrap";
 
 const SingIn = () => {
-    const handleEmailVerification = () => {
-        sendEmailVerification(auth.currentUser).then(() => {
-            toast("Email verification sent");
-        });
-    };
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const [
         createUserWithEmailAndPassword,
@@ -38,18 +33,11 @@ const SingIn = () => {
     }
     if (user || userEmail) {
         navigate("/");
-        handleEmailVerification();
     }
-    const handlePasswordReset = () => {
-        sendPasswordResetEmail(auth, email)
-            .then(() => {
-                toast("reset password");
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // ..
-            });
+    const handleEmailVerification = () => {
+        sendEmailVerification(auth.currentUser).then(() => {
+            toast("Email verification sent");
+        });
     };
 
     const handleSingUp = (e) => {
@@ -106,13 +94,7 @@ const SingIn = () => {
                             <small className="text-danger text-start">
                                 {errorElement}
                             </small>
-                            <Button
-                                onClick={handlePasswordReset}
-                                variant="link"
-                            >
-                                {" "}
-                                Forget Password
-                            </Button>
+
                             <button
                                 className="w-100 btn btn-lg btn-primary py-2"
                                 type="submit"

@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import "react-toastify/dist/ReactToastify.css";
 import "./Login.css";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { sendEmailVerification, sendPasswordResetEmail } from "firebase/auth";
+import { toast, ToastContainer } from "react-toastify";
+import { Button } from "react-bootstrap";
 
 const Login = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
@@ -22,6 +26,19 @@ const Login = () => {
             </div>
         );
     }
+    // const notify = () => toast("Wow so easy !");
+    const handlePasswordReset = () => {
+        console.log(email);
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                // alert("reset password");
+                toast("reset password");
+                // notify();
+            })
+            .catch((error) => {
+                toast("reset password");
+            });
+    };
     if (user || userEmail) {
         navigate(from, { replace: true });
     }
@@ -71,6 +88,14 @@ const Login = () => {
                             <small className="text-danger text-start">
                                 {errorElement}
                             </small>
+                            <Button
+                                onClick={handlePasswordReset}
+                                variant="link"
+                            >
+                                {" "}
+                                Forget Password
+                            </Button>
+                            <ToastContainer />
                             <button
                                 className="w-100 btn btn-lg btn-primary py-2"
                                 type="submit"
