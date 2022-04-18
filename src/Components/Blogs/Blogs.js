@@ -39,7 +39,9 @@ const Blogs = () => {
                             authentication?
                         </Accordion.Header>
                         <Accordion.Body className="text-start">
-                            Firebase provide other than authentication
+                            Firebase other are Cloud Firestorm, Cloud Functions.
+                            Authentication, Hosting, Cloud Storage, Google
+                            Analytics, Predictions, Cloud Messaging etc.
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>

@@ -3,8 +3,16 @@ import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { sendEmailVerification, sendPasswordResetEmail } from "firebase/auth";
+import { toast } from "react-toastify";
+import { Button } from "react-bootstrap";
 
 const SingIn = () => {
+    const handleEmailVerification = () => {
+        sendEmailVerification(auth.currentUser).then(() => {
+            toast("Email verification sent");
+        });
+    };
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const [
         createUserWithEmailAndPassword,
@@ -30,10 +38,24 @@ const SingIn = () => {
     }
     if (user || userEmail) {
         navigate("/");
+        handleEmailVerification();
     }
+    const handlePasswordReset = () => {
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                toast("reset password");
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // ..
+            });
+    };
+
     const handleSingUp = (e) => {
         e.preventDefault();
         createUserWithEmailAndPassword(email, password);
+        handleEmailVerification();
     };
     return (
         <div>
@@ -51,7 +73,7 @@ const SingIn = () => {
                                     type="text"
                                     className="form-control"
                                     id="floatingInput"
-                                    placeholder="user"
+                                    // placeholder="user"
                                 />
                                 <label htmlFor="floatingInput">Your Name</label>
                             </div>
@@ -84,6 +106,13 @@ const SingIn = () => {
                             <small className="text-danger text-start">
                                 {errorElement}
                             </small>
+                            <Button
+                                onClick={handlePasswordReset}
+                                variant="link"
+                            >
+                                {" "}
+                                Forget Password
+                            </Button>
                             <button
                                 className="w-100 btn btn-lg btn-primary py-2"
                                 type="submit"
