@@ -1,7 +1,7 @@
 # SS Photography
 
 live website link:
-https://dream-bag-shop.netlify.app/
+https://ss-photography-2022.web.app/
 
 `website's different features and functionality`
 
